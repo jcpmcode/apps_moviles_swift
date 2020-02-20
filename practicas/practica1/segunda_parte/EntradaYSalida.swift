@@ -9,6 +9,8 @@
 import Foundation
 
 class EntradaYSalida {
+
+    let diccionarios = Diccionarios()
     
     // MARK: - Leer entrada del usuario
     func obtieneInput() -> String {
@@ -20,7 +22,18 @@ class EntradaYSalida {
     }
     
     // MARK: - Validar
-    func ValidaArgumentos() {
+    func validaArgumentos() {
         
+    }
+
+    func validaPalabrasInconvenientes(expresionAlfabetica: String) -> String{
+        var resultado = expresionAlfabetica
+
+        for (palabraInconvenente, sustituto) in diccionarios.tablaPalabrasInconvenientes {
+            if expresionAlfabetica == palabraInconvenente {
+                resultado = sustituto
+            }
+            return resultado
+        }
     }
 }

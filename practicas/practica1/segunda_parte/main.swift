@@ -8,9 +8,10 @@
 
 import Foundation
 
-let (argc, argumentos) = (CommandLine.argc, CommandLine.arguments)
 let info = Info()
 let menu = Menu()
+
+let (argc, argumentos) = (CommandLine.argc, CommandLine.arguments)
 
 if (argc > 1) {
     info.imprimeDescripcion()
@@ -22,41 +23,35 @@ else {
 }
 
 
-
-
-
 // Validaciones persona moral
 
 // Primero quitar todas las palabras de la razon social que no sirvan
-// Despiues contar las palabras
+// Despues contar las palabras
 
-//if (contadorDePalabras > 0) {
+// if (contadorDePalabras > 0) {
 //    if (contadorDePalabras >= 3) {
-//
+
 //    } else {
 //        // Regla 6
 //        if (contadorDePalabras == 2) {
-//
+
 //        }
 //        else {
 //            // Regla 7
 //            if (contadorDeLetras < 3){
 //                // Regla 8
-//
+
 //            }
 //        }
 //    }
-//}
-//else {
+// }
+// else {
 //    print("Tienes que ingresar al menos una palabra")
-//}
+// }
 
 
 
 // Algoritmo para tomar digitos de la fecha:
-
-// Algoritmo para vallidar que la fecha ingresada sea menor o igual a la actual
-
 
 // Diccionarios Personas fisicas:
 // Tabla VI
