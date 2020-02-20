@@ -1,3 +1,11 @@
+//
+//  EntradaYSalida.swift
+//  primera_parte
+//
+//  Created by jpaniagua on 2/19/20.
+//  Copyright © 2020 jpaniagua. All rights reserved.
+//
+
 import Foundation
 
 class EntradaYSalida {

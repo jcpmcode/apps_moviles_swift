@@ -1,10 +1,18 @@
+//
+//  Saludos.swift
+//  primera_parte
+//
+//  Created by jpaniagua on 2/19/20.
+//  Copyright © 2020 jpaniagua. All rights reserved.
+//
+
 import Foundation
 
 class Saludos {
     let entradaYSalida = EntradaYSalida()
     var formatoFecha: DateFormatter = {
         let formato = DateFormatter()
-        formato.DateStyle = .long
+        formato.dateStyle = .long
 
         return formato
     } ()
