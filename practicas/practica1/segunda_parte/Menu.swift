@@ -17,6 +17,8 @@ let personamoral = PersonaMoral()
 class Menu {
     
     func imprimeMenu() {
+        var opcionSeleccionada: Int = 0
+        
         repeat{
             print("Por favor selecciona alguna de las siguientes ingresando el numero correspondiente:")
             print("\t1. Generar RFC para persona fisica")

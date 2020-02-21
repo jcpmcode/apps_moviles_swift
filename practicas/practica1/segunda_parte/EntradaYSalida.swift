@@ -33,7 +33,7 @@ class EntradaYSalida {
             if expresionAlfabetica == palabraInconvenente {
                 resultado = sustituto
             }
-            return resultado
         }
+        return resultado
     }
 }

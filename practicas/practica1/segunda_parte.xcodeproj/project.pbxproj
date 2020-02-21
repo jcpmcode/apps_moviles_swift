@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		CF279A4223FE047B00474C1F /* diccionarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF279A4123FE047B00474C1F /* diccionarios.swift */; };
 		CF279A7523FE15E700474C1F /* EntradaYSalida.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF279A7423FE15E700474C1F /* EntradaYSalida.swift */; };
-		CF279A7723FE1CAC00474C1F /* PersonasMorales.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF279A7623FE1CAC00474C1F /* PersonasMorales.swift */; };
-		CF279A7923FE1CBF00474C1F /* PersonasFisicas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF279A7823FE1CBF00474C1F /* PersonasFisicas.swift */; };
 		CF279A7B23FE201600474C1F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF279A7A23FE201600474C1F /* Menu.swift */; };
 		CF279A7F23FE252500474C1F /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF279A7E23FE252500474C1F /* Info.swift */; };
+		CF30167A23FF3E9E00681BE6 /* PersonaFisica.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30167923FF3E9E00681BE6 /* PersonaFisica.swift */; };
+		CF30167C23FF3EA300681BE6 /* PersonaMoral.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30167B23FF3EA300681BE6 /* PersonaMoral.swift */; };
 		CFE7B7B423FB667400048628 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE7B7B323FB667400048628 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,10 +31,10 @@
 /* Begin PBXFileReference section */
 		CF279A4123FE047B00474C1F /* diccionarios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diccionarios.swift; sourceTree = "<group>"; };
 		CF279A7423FE15E700474C1F /* EntradaYSalida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntradaYSalida.swift; sourceTree = "<group>"; };
-		CF279A7623FE1CAC00474C1F /* PersonasMorales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonasMorales.swift; sourceTree = "<group>"; };
-		CF279A7823FE1CBF00474C1F /* PersonasFisicas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonasFisicas.swift; sourceTree = "<group>"; };
 		CF279A7A23FE201600474C1F /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		CF279A7E23FE252500474C1F /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		CF30167923FF3E9E00681BE6 /* PersonaFisica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonaFisica.swift; sourceTree = "<group>"; };
+		CF30167B23FF3EA300681BE6 /* PersonaMoral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonaMoral.swift; sourceTree = "<group>"; };
 		CFE7B7B023FB667400048628 /* segunda_parte */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = segunda_parte; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE7B7B323FB667400048628 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,11 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				CF279A4123FE047B00474C1F /* diccionarios.swift */,
+				CF30167B23FF3EA300681BE6 /* PersonaMoral.swift */,
+				CF30167923FF3E9E00681BE6 /* PersonaFisica.swift */,
 				CF279A7A23FE201600474C1F /* Menu.swift */,
-				CF279A7623FE1CAC00474C1F /* PersonasMorales.swift */,
 				CF279A7423FE15E700474C1F /* EntradaYSalida.swift */,
 				CFE7B7B323FB667400048628 /* main.swift */,
-				CF279A7823FE1CBF00474C1F /* PersonasFisicas.swift */,
 				CF279A7E23FE252500474C1F /* Info.swift */,
 			);
 			path = segunda_parte;
@@ -138,13 +138,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF30167C23FF3EA300681BE6 /* PersonaMoral.swift in Sources */,
 				CF279A7F23FE252500474C1F /* Info.swift in Sources */,
 				CF279A7B23FE201600474C1F /* Menu.swift in Sources */,
-				CF279A7923FE1CBF00474C1F /* PersonasFisicas.swift in Sources */,
 				CF279A4223FE047B00474C1F /* diccionarios.swift in Sources */,
 				CF279A7523FE15E700474C1F /* EntradaYSalida.swift in Sources */,
-				CF279A7723FE1CAC00474C1F /* PersonasMorales.swift in Sources */,
 				CFE7B7B423FB667400048628 /* main.swift in Sources */,
+				CF30167A23FF3E9E00681BE6 /* PersonaFisica.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

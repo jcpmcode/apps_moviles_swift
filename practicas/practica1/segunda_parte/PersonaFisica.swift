@@ -8,11 +8,11 @@
 
 import Foundation
 
-let entradaYSalida = entradaYSalida()
+let entradaYSalida = EntradaYSalida()
 
 // MARK: - Personas fisicas
 //  3 letras, 1 espacio y 6 digitos. 3 digitos adicionales para la homoclave (2 letras y 1 numero)
-class PersonasFisicas {
+class PersonaFisica {
     
     func leerDatosPersonaFisica() {
         var apellidoPaterno = ""

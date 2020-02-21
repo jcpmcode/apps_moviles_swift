@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF3016C623FF65BC00681BE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3016C523FF65BC00681BE6 /* AppDelegate.swift */; };
+		CF3016C823FF65BC00681BE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3016C723FF65BC00681BE6 /* SceneDelegate.swift */; };
+		CF3016CA23FF65BC00681BE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3016C923FF65BC00681BE6 /* ViewController.swift */; };
+		CF3016CD23FF65BC00681BE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3016CB23FF65BC00681BE6 /* Main.storyboard */; };
+		CF3016CF23FF65BD00681BE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3016CE23FF65BD00681BE6 /* Assets.xcassets */; };
+		CF3016D223FF65BD00681BE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3016D023FF65BD00681BE6 /* LaunchScreen.storyboard */; };
+		CF3016DD23FF65BD00681BE6 /* HipnosisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3016DC23FF65BD00681BE6 /* HipnosisTests.swift */; };
+		CF3016E823FF65BD00681BE6 /* HipnosisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3016E723FF65BD00681BE6 /* HipnosisUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF3016D923FF65BD00681BE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF3016BA23FF65BC00681BE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF3016C123FF65BC00681BE6;
+			remoteInfo = Hipnosis;
+		};
+		CF3016E423FF65BD00681BE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF3016BA23FF65BC00681BE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF3016C123FF65BC00681BE6;
+			remoteInfo = Hipnosis;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF3016C223FF65BC00681BE6 /* Hipnosis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hipnosis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3016C523FF65BC00681BE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF3016C723FF65BC00681BE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CF3016C923FF65BC00681BE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF3016CC23FF65BC00681BE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF3016CE23FF65BD00681BE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF3016D123FF65BD00681BE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF3016D323FF65BD00681BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF3016D823FF65BD00681BE6 /* HipnosisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HipnosisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3016DC23FF65BD00681BE6 /* HipnosisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipnosisTests.swift; sourceTree = "<group>"; };
+		CF3016DE23FF65BD00681BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF3016E323FF65BD00681BE6 /* HipnosisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HipnosisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3016E723FF65BD00681BE6 /* HipnosisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipnosisUITests.swift; sourceTree = "<group>"; };
+		CF3016E923FF65BD00681BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF3016BF23FF65BC00681BE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3016D523FF65BD00681BE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3016E023FF65BD00681BE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF3016B923FF65BC00681BE6 = {
+			isa = PBXGroup;
+			children = (
+				CF3016C423FF65BC00681BE6 /* Hipnosis */,
+				CF3016DB23FF65BD00681BE6 /* HipnosisTests */,
+				CF3016E623FF65BD00681BE6 /* HipnosisUITests */,
+				CF3016C323FF65BC00681BE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF3016C323FF65BC00681BE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF3016C223FF65BC00681BE6 /* Hipnosis.app */,
+				CF3016D823FF65BD00681BE6 /* HipnosisTests.xctest */,
+				CF3016E323FF65BD00681BE6 /* HipnosisUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF3016C423FF65BC00681BE6 /* Hipnosis */ = {
+			isa = PBXGroup;
+			children = (
+				CF3016C523FF65BC00681BE6 /* AppDelegate.swift */,
+				CF3016C723FF65BC00681BE6 /* SceneDelegate.swift */,
+				CF3016C923FF65BC00681BE6 /* ViewController.swift */,
+				CF3016CB23FF65BC00681BE6 /* Main.storyboard */,
+				CF3016CE23FF65BD00681BE6 /* Assets.xcassets */,
+				CF3016D023FF65BD00681BE6 /* LaunchScreen.storyboard */,
+				CF3016D323FF65BD00681BE6 /* Info.plist */,
+			);
+			path = Hipnosis;
+			sourceTree = "<group>";
+		};
+		CF3016DB23FF65BD00681BE6 /* HipnosisTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF3016DC23FF65BD00681BE6 /* HipnosisTests.swift */,
+				CF3016DE23FF65BD00681BE6 /* Info.plist */,
+			);
+			path = HipnosisTests;
+			sourceTree = "<group>";
+		};
+		CF3016E623FF65BD00681BE6 /* HipnosisUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF3016E723FF65BD00681BE6 /* HipnosisUITests.swift */,
+				CF3016E923FF65BD00681BE6 /* Info.plist */,
+			);
+			path = HipnosisUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF3016C123FF65BC00681BE6 /* Hipnosis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3016EC23FF65BD00681BE6 /* Build configuration list for PBXNativeTarget "Hipnosis" */;
+			buildPhases = (
+				CF3016BE23FF65BC00681BE6 /* Sources */,
+				CF3016BF23FF65BC00681BE6 /* Frameworks */,
+				CF3016C023FF65BC00681BE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hipnosis;
+			productName = Hipnosis;
+			productReference = CF3016C223FF65BC00681BE6 /* Hipnosis.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF3016D723FF65BD00681BE6 /* HipnosisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3016EF23FF65BD00681BE6 /* Build configuration list for PBXNativeTarget "HipnosisTests" */;
+			buildPhases = (
+				CF3016D423FF65BD00681BE6 /* Sources */,
+				CF3016D523FF65BD00681BE6 /* Frameworks */,
+				CF3016D623FF65BD00681BE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF3016DA23FF65BD00681BE6 /* PBXTargetDependency */,
+			);
+			name = HipnosisTests;
+			productName = HipnosisTests;
+			productReference = CF3016D823FF65BD00681BE6 /* HipnosisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF3016E223FF65BD00681BE6 /* HipnosisUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3016F223FF65BD00681BE6 /* Build configuration list for PBXNativeTarget "HipnosisUITests" */;
+			buildPhases = (
+				CF3016DF23FF65BD00681BE6 /* Sources */,
+				CF3016E023FF65BD00681BE6 /* Frameworks */,
+				CF3016E123FF65BD00681BE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF3016E523FF65BD00681BE6 /* PBXTargetDependency */,
+			);
+			name = HipnosisUITests;
+			productName = HipnosisUITests;
+			productReference = CF3016E323FF65BD00681BE6 /* HipnosisUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF3016BA23FF65BC00681BE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = jpaniagua;
+				TargetAttributes = {
+					CF3016C123FF65BC00681BE6 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					CF3016D723FF65BD00681BE6 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = CF3016C123FF65BC00681BE6;
+					};
+					CF3016E223FF65BD00681BE6 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = CF3016C123FF65BC00681BE6;
+					};
+				};
+			};
+			buildConfigurationList = CF3016BD23FF65BC00681BE6 /* Build configuration list for PBXProject "Hipnosis" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF3016B923FF65BC00681BE6;
+			productRefGroup = CF3016C323FF65BC00681BE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF3016C123FF65BC00681BE6 /* Hipnosis */,
+				CF3016D723FF65BD00681BE6 /* HipnosisTests */,
+				CF3016E223FF65BD00681BE6 /* HipnosisUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF3016C023FF65BC00681BE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3016D223FF65BD00681BE6 /* LaunchScreen.storyboard in Resources */,
+				CF3016CF23FF65BD00681BE6 /* Assets.xcassets in Resources */,
+				CF3016CD23FF65BC00681BE6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3016D623FF65BD00681BE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3016E123FF65BD00681BE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF3016BE23FF65BC00681BE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3016CA23FF65BC00681BE6 /* ViewController.swift in Sources */,
+				CF3016C623FF65BC00681BE6 /* AppDelegate.swift in Sources */,
+				CF3016C823FF65BC00681BE6 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3016D423FF65BD00681BE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3016DD23FF65BD00681BE6 /* HipnosisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3016DF23FF65BD00681BE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3016E823FF65BD00681BE6 /* HipnosisUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF3016DA23FF65BD00681BE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF3016C123FF65BC00681BE6 /* Hipnosis */;
+			targetProxy = CF3016D923FF65BD00681BE6 /* PBXContainerItemProxy */;
+		};
+		CF3016E523FF65BD00681BE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF3016C123FF65BC00681BE6 /* Hipnosis */;
+			targetProxy = CF3016E423FF65BD00681BE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF3016CB23FF65BC00681BE6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF3016CC23FF65BC00681BE6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF3016D023FF65BD00681BE6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF3016D123FF65BD00681BE6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF3016EA23FF65BD00681BE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF3016EB23FF65BD00681BE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF3016ED23FF65BD00681BE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98U3F2XU3X;
+				INFOPLIST_FILE = Hipnosis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jpaniagua.Hipnosis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF3016EE23FF65BD00681BE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98U3F2XU3X;
+				INFOPLIST_FILE = Hipnosis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jpaniagua.Hipnosis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CF3016F023FF65BD00681BE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98U3F2XU3X;
+				INFOPLIST_FILE = HipnosisTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jpaniagua.HipnosisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hipnosis.app/Hipnosis";
+			};
+			name = Debug;
+		};
+		CF3016F123FF65BD00681BE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98U3F2XU3X;
+				INFOPLIST_FILE = HipnosisTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jpaniagua.HipnosisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hipnosis.app/Hipnosis";
+			};
+			name = Release;
+		};
+		CF3016F323FF65BD00681BE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98U3F2XU3X;
+				INFOPLIST_FILE = HipnosisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jpaniagua.HipnosisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hipnosis;
+			};
+			name = Debug;
+		};
+		CF3016F423FF65BD00681BE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98U3F2XU3X;
+				INFOPLIST_FILE = HipnosisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jpaniagua.HipnosisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hipnosis;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF3016BD23FF65BC00681BE6 /* Build configuration list for PBXProject "Hipnosis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3016EA23FF65BD00681BE6 /* Debug */,
+				CF3016EB23FF65BD00681BE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF3016EC23FF65BD00681BE6 /* Build configuration list for PBXNativeTarget "Hipnosis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3016ED23FF65BD00681BE6 /* Debug */,
+				CF3016EE23FF65BD00681BE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF3016EF23FF65BD00681BE6 /* Build configuration list for PBXNativeTarget "HipnosisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3016F023FF65BD00681BE6 /* Debug */,
+				CF3016F123FF65BD00681BE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF3016F223FF65BD00681BE6 /* Build configuration list for PBXNativeTarget "HipnosisUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3016F323FF65BD00681BE6 /* Debug */,
+				CF3016F423FF65BD00681BE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF3016BA23FF65BC00681BE6 /* Project object */;
+}

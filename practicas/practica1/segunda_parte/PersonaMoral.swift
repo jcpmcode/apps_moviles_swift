@@ -12,13 +12,13 @@ let entradaysalida = EntradaYSalida()
 
 // MARK: - Personas morales
 // 4 letras y 6 digitos 3 digitos adicionales para la homoclave (2 letras y 1 numero)
-class PersonasMorales {
+class PersonaMoral {
     
     func leerDatosPersonaMoral() {
-        var razonSocial =
-        var Año =
-        var Mes =
-        var Día =
+        var razonSocial = ""
+        var Año = ""
+        var Mes = ""
+        var Día = ""
 
         print("Ingresa los datos de la persona moral a registrar:")
         repeat {    
