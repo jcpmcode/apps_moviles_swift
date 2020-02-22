@@ -20,7 +20,7 @@ class PersonaMoral {
         var Año = ""
         var Mes = ""
         var Día = ""
-
+        
         print("Ingresa los datos de la persona moral a registrar:")
         repeat {    
             print("\tIngresa la razon social de la empresa: ")
@@ -41,20 +41,28 @@ class PersonaMoral {
         } while Día.isEmpty
         // Validar que la fecha sea menor o igual a la fecha actual
     }
-
-    func quitarAbreviaturasRazonSocial (RazonSocial: String) -> String {
-        var resultado = RazonSocial.uppercased()
-
-        for (palabraInconveniente, sustituto) in diccionarios.tablaPalabrasNoUtilizadasRFCMorales {
-            if RazonSocial.uppercased() == palabraInconveniente {
-                resultado = sustituto
-            }
+    
+    func preparaStringParaValidaciones (RazonSocial: String) -> String {
+        var resultado = " "
+        resultado += RazonSocial.uppercased()
+        resultado.append(" ")
+        resultado = resultado.uppercased()
+        
+        return resultado
+    }
+    
+    func quitarElementosString (cadena: String, listaDePalabrasAQuitar: [String], StringDeReemplazo: String) -> String {
+        var resultado = cadena
+        
+        for palabraInconveniente in listaDePalabrasAQuitar {
+            //hay que iterar el numero de veces que encuentra las palabras
+            resultado = resultado.replacingOccurrences(of: palabraInconveniente, with: StringDeReemplazo)
         }
         return resultado
     }
     
     func generaRFCPersonaMoral() {
-
+        
     }
 }
 

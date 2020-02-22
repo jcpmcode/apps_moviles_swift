@@ -13,6 +13,11 @@ let menu = Menu()
 let es = EntradaYSalida()
 let personaMoral = PersonaMoral()
 let personaFisica = PersonaFisica()
+let d = Diccionarios()
+
+var a = ""
+var b = ""
+var c = ""
 
 let (argc, argumentos) = (CommandLine.argc, CommandLine.arguments)
 
@@ -21,7 +26,19 @@ if (argc > 1) {
     info.imprimeUso()
 }
 else {
-    print (personaMoral.quitarAbreviaturasRazonSocial(RazonSocial: "S. en N.C., S. En C hola como estas S. de R.L"))
+    let str = "S. en C., S. En C hola como estas S. de R.L. sociedad xs S en C."
+//    let str = "s en c s en c s en c s en c s en c"
+    c = personaMoral.preparaStringParaValidaciones(RazonSocial: str)
+    a = personaMoral.quitarElementosString(cadena: c, listaDePalabrasAQuitar: d.caracteresNoPermitidos, StringDeReemplazo: "")
+    b = personaMoral.quitarElementosString(cadena: a, listaDePalabrasAQuitar: d.tablaPalabrasNoUtilizadasRFCMoralesSinPuntos, StringDeReemplazo: " ")
+    let razonSocial = b.components(separatedBy: " ")
+    print (razonSocial)
+    
+//    if (razonSocial[0] == "") {
+//        razonSocial.remove(at: 0)
+//    }
+    print (a)
+    print (b)
 //    info.imprimeDescripcion()
 //    menu.imprimeMenu()
 }

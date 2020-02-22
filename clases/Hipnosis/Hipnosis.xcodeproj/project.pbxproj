@@ -15,6 +15,7 @@
 		CF3016D223FF65BD00681BE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3016D023FF65BD00681BE6 /* LaunchScreen.storyboard */; };
 		CF3016DD23FF65BD00681BE6 /* HipnosisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3016DC23FF65BD00681BE6 /* HipnosisTests.swift */; };
 		CF3016E823FF65BD00681BE6 /* HipnosisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3016E723FF65BD00681BE6 /* HipnosisUITests.swift */; };
+		CF3016F923FF666600681BE6 /* HipnosisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3016F823FF666600681BE6 /* HipnosisView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CF3016E323FF65BD00681BE6 /* HipnosisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HipnosisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3016E723FF65BD00681BE6 /* HipnosisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipnosisUITests.swift; sourceTree = "<group>"; };
 		CF3016E923FF65BD00681BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF3016F823FF666600681BE6 /* HipnosisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipnosisView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				CF3016C523FF65BC00681BE6 /* AppDelegate.swift */,
 				CF3016C723FF65BC00681BE6 /* SceneDelegate.swift */,
+				CF3016F823FF666600681BE6 /* HipnosisView.swift */,
 				CF3016C923FF65BC00681BE6 /* ViewController.swift */,
 				CF3016CB23FF65BC00681BE6 /* Main.storyboard */,
 				CF3016CE23FF65BD00681BE6 /* Assets.xcassets */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF3016CA23FF65BC00681BE6 /* ViewController.swift in Sources */,
+				CF3016F923FF666600681BE6 /* HipnosisView.swift in Sources */,
 				CF3016C623FF65BC00681BE6 /* AppDelegate.swift in Sources */,
 				CF3016C823FF65BC00681BE6 /* SceneDelegate.swift in Sources */,
 			);

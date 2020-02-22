@@ -86,7 +86,7 @@ struct Rectángulo: Descriptible {
     func describete() -> String {
         return "Rectángulo con origen en \(self.origen) y \(self.tamaño)"
     }
-}s
+}
 
 var miRectángulo = Rectángulo(origen: Punto(x: 20, y: 10), tamaño: Tamaño(ancho: 50, alto: 15))
 miRectángulo.describete()
