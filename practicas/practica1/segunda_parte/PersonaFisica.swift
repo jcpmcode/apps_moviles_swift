@@ -60,3 +60,13 @@ class PersonaFisica {
 
     }
 }
+
+
+
+
+// Validaciones persona fisica
+// Al final de generar la clave, si la clave conforma alguna palabra inconveniente hay que reemplazar la ultima letra por una X -> Regla 9
+
+
+// Diccionarios Personas fisicas:
+// Tabla VI

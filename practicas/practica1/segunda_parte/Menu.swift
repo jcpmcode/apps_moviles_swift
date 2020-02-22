@@ -17,24 +17,25 @@ let personamoral = PersonaMoral()
 class Menu {
     
     func imprimeMenu() {
-        var opcionSeleccionada: Int = 0
-        
+        var opcionSeleccionada: String = ""
         repeat{
             print("Por favor selecciona alguna de las siguientes ingresando el numero correspondiente:")
-            print("\t1. Generar RFC para persona fisica")
-            print("\t2. Generar RFC para persona moral")
-            print("\t3. Salir de la aplicación")
+            print("\ta. Generar RFC para persona fisica")
+            print("\tb. Generar RFC para persona moral")
+            print("\tc. Salir de la aplicación")
+            opcionSeleccionada = e.obtieneInput()
+            
             switch opcionSeleccionada {
-                case 1:
+                case "a":
                     personafisica.leerDatosPersonaFisica()                    
-                case 2:
+                case "b":
                     personamoral.leerDatosPersonaMoral()
-                case 3:
+                case "c":
                     print("Adios!")
                 default:
                 print("ERROR: Por favor selecciona una opción válida")
             }
         }
-        while (opcionSeleccionada != 3)
+        while (opcionSeleccionada != "c")
     }
 }

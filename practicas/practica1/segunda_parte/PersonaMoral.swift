@@ -9,6 +9,7 @@
 import Foundation
 
 let entradaysalida = EntradaYSalida()
+let diccionarios = Diccionarios()
 
 // MARK: - Personas morales
 // 4 letras y 6 digitos 3 digitos adicionales para la homoclave (2 letras y 1 numero)
@@ -41,7 +42,48 @@ class PersonaMoral {
         // Validar que la fecha sea menor o igual a la fecha actual
     }
 
+    func quitarAbreviaturasRazonSocial (RazonSocial: String) -> String {
+        var resultado = RazonSocial.uppercased()
+
+        for (palabraInconveniente, sustituto) in diccionarios.tablaPalabrasNoUtilizadasRFCMorales {
+            if RazonSocial.uppercased() == palabraInconveniente {
+                resultado = sustituto
+            }
+        }
+        return resultado
+    }
+    
     func generaRFCPersonaMoral() {
 
     }
 }
+
+// Validaciones persona moral
+
+// Primero quitar todas las palabras de la razon social que no sirvan -> Reglas 5, 9 y 11
+// Despues contar las palabras
+
+// if (contadorDePalabras > 0) {
+//    if (contadorDePalabras >= 3) {
+
+//    } else {
+//        // Regla 6
+//        if (contadorDePalabras == 2) {
+
+//        }
+//        else {
+//            // Regla 7
+//            if (contadorDeLetras < 3){
+//                // Regla 8
+
+//            }
+//        }
+//    }
+// }
+// else {
+//    print("Tienes que ingresar al menos una palabra")
+// }
+
+
+// Diccionarios personas morales:
+// Tabla V

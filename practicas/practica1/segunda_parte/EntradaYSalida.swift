@@ -26,14 +26,16 @@ class EntradaYSalida {
         
     }
 
-    func validaPalabrasInconvenientes(expresionAlfabetica: String) -> String{
-        var resultado = expresionAlfabetica
+    func conviertePalabrasInconvenientes(expresionAlfabetica: String) -> String{
+        var resultado = expresionAlfabetica.uppercased()
 
-        for (palabraInconvenente, sustituto) in diccionarios.tablaPalabrasInconvenientes {
-            if expresionAlfabetica == palabraInconvenente {
+        for (palabraInconveniente, sustituto) in diccionarios.tablaPalabrasInconvenientes {
+            if expresionAlfabetica.uppercased() == palabraInconveniente {
                 resultado = sustituto
             }
         }
         return resultado
     }
+    
+    
 }
