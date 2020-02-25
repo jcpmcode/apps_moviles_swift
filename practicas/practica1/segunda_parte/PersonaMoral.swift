@@ -223,19 +223,20 @@ class PersonaMoral {
         let numerosAPalabras = convertirNumerosAPalabras(cadenaEnArray: numerosRomanosAArabigos)     
         let cadenaPreparada = entradaysalida.preparaStringParaValidaciones(cadena: numerosAPalabras)
         let cadenaSinCaracteresNoPermitidos = entradaysalida.reemplazarElementosString(cadena: cadenaPreparada, listaDePalabrasAReemplazar: d.caracteresNoPermitidos, StringDeReemplazo: "")
-        let cadenaSinPalabrasNoPermitidas = entradaysalida.reemplazarElementosString(cadena: cadenaSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: d.tablaPalabrasNoUtilizadasRFCMorales, StringDeReemplazo: " ")
+        let cadenaSinPalabrasNoPermitidas = entradaysalida.reemplazarElementosString(cadena: cadenaSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: d.tablaPalabrasNoUtilizadasRFCMorales, StringDeReemplazo: " ")        
         let cadenaSinPuntosYComas = entradaysalida.reemplazarElementosString(cadena: cadenaSinPalabrasNoPermitidas, listaDePalabrasAReemplazar: d.puntosYComas, StringDeReemplazo: "")
         let cadenaFiltrada = entradaysalida.quitarStringsVacios(cadena: cadenaSinPuntosYComas)
         let clave = obtenClavePersonaMoral(razonSocial: cadenaFiltrada)
         let claveSinAcentos = entradaysalida.quitarAcentosClave (clave: clave)
         let fechaFormateada = entradaysalida.obtenFecha (año: año, mes: mes, día: día)
+        let razonSocialCompleta = filtraRazonSocial(entrada)
         let claveHomonimia = ""
         let digitoVerificador = ""
 
         return (claveSinAcentos, fechaFormateada, claveHomonimia, digitoVerificador)
     }
 
-    func filtraRazonSocial(razonSocial: String) -> String {
+    func filtraRazonSocial(entrada: String) -> String {
         let entradaLimpia = entradaysalida.quitarStringsVacios(cadena: entrada)
         let numerosRomanosAArabigos = personaMoral.convertirNumerosRomanosArabigos(cadenaEnArray: entradaLimpia)
         // pendiente
@@ -244,7 +245,11 @@ class PersonaMoral {
         let cadenaSinCaracteresNoPermitidos = entradaysalida.reemplazarElementosString(cadena: cadenaPreparada, listaDePalabrasAReemplazar: d.caracteresNoPermitidos, StringDeReemplazo: "")
         let cadenaSinPuntosYComas = entradaysalida.reemplazarElementosString(cadena: cadenaSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: d.puntosYComas, StringDeReemplazo: "")
         let cadenaFiltrada = entradaysalida.quitarStringsVacios(cadena: cadenaSinPuntosYComas)
-        
+
+        for palabra in cadenaFiltrada {
+            resultado += palabra
+        }
+        return resultado
     }
 
 }

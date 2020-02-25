@@ -81,8 +81,10 @@ class EntradaYSalida {
         return resultado
     }
 
-    func obtenerClaveHomonimia () -> String {
-        
+    func obtenerClaveHomonimia (entrada: String) -> String {
+        var resultado = ""
+
+        return resultado
     }
 
 }
