@@ -28,7 +28,7 @@ if (argc > 1) {
 else {
     // info.imprimeDescripcion()
     // menu.imprimeMenu()
-
+    
     // let str = "S. en C., S. En C hola como estas S. de R.L. sociedad xs S en C.    Paty   Chucho "
     // let entradaLimpia = personaMoral.quitarStringsVacios(cadena: s)
     // let numerosRomanosAArabigos = personaMoral.convertirNumerosRomanosArabigos(cadenaEnArray: s)
@@ -41,6 +41,4 @@ else {
     // let clave = personaMoral.obtenClavePersonaMoral(razonSocial: )
     // let fechaFormateada = obtenFecha (año: año, mes: mes, día: día)
     // let rfc = clave + fechaFormateada
-
-    
 }

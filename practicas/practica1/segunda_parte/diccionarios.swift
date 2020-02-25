@@ -283,7 +283,6 @@ class Diccionarios {
     let caracteresNoPermitidos = [
         "!",
         "%",
-        "&",
         "/",
         "(",
         "$",
@@ -306,14 +305,14 @@ class Diccionarios {
         "´",
         "·",        
     ]
-
+    
     let puntosYComas = [
         ".",
         ":",
         ",",
         ";"
     ]
-
+    
     let numerosRomanos = [
         "M" : 1000,
         "D" : 500,
@@ -323,7 +322,7 @@ class Diccionarios {
         "V" : 5,
         "I" : 1
     ]
-
+    
     let equivalenciasAcentos = [
         "Á" : "A",
         "É" : "E",
