@@ -23,17 +23,14 @@ class EntradaYSalida {
     
     func reemplazarElementosString (cadena: String, listaDePalabrasAReemplazar: [String], StringDeReemplazo: String) -> String {
         var resultado = cadena
-        var componentes : [String]
-        var ocurrencias = 0
-        
+
         for palabraInconveniente in listaDePalabrasAReemplazar {
-            // hay que iterar el numero de veces que encuentra las palabras
-            componentes = cadena.components(separatedBy: palabraInconveniente)
-            ocurrencias = componentes.count - 1
-            for _ in 0..<ocurrencias {
+            // hay que iterar caracter por caracter para asegurar que elimina todas las palabras
+            for letra in resultado {
                 resultado = resultado.replacingOccurrences(of: palabraInconveniente, with: StringDeReemplazo)
             }
         }
+
         return resultado
     }
     
@@ -134,4 +131,48 @@ class EntradaYSalida {
         return resultado
     }
     
+    func obtenerDigitoVerificador (rfcConHomonimia: String, diccionario: [String : String]) -> String {
+        var digitosCadena : [Int] = []
+        var arregloString : [String] = []
+        var D = 0
+        var x = 0
+        var d = ""
+
+        for letra in rfcConHomonimia {
+            arregloString.append(String(letra))
+        }
+        
+        for (caracter, sustituto) in diccionario {
+            for i in 0..<arregloString.count{
+                if arregloString[i] == caracter {
+                    arregloString[i] = sustituto
+                }
+            }
+        }
+        
+        for i in 0..<arregloString.count {
+            digitosCadena.append(Int(arregloString[i]) ?? 0 )
+        }
+
+        for n in 0..<digitosCadena.count {
+            D += (digitosCadena[n]) * (14 - (n+1))
+        }
+
+        if ((D % 11) == 0){
+            d = "0"
+        }
+        else {
+            if ((D % 11) < 10) && ((D % 11) > 0) {
+                x = 11 - (D % 11)
+                d = String(x)                
+            }
+            else {
+                if ((D % 11) == 10) {
+                    d = "A"
+                }
+            }
+        }
+        
+        return d
+    }
 }

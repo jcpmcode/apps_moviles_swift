@@ -29,7 +29,7 @@ else {
     // info.imprimeDescripcion()
     // menu.imprimeMenu()
     
-    // let str = "S. en C., S. En C hola como estas S. de R.L. sociedad xs S en C.    Paty   Chucho "
+    // let str = "S. en C. S. En C.  S. En C.  S. En C.  S. En C. h hola como estas S. de R.L. sociedad xs S. en C.  LA  Paty el  Chucho "
     // let entradaLimpia = personaMoral.quitarStringsVacios(cadena: s)
     // let numerosRomanosAArabigos = personaMoral.convertirNumerosRomanosArabigos(cadenaEnArray: s)
     // let numerosAPalabras = personaMoral.convertirNumerosAPalabras(cadenaEnArray: s)     

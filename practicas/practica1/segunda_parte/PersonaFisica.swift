@@ -24,6 +24,8 @@ class PersonaFisica {
         var mes = 0
         var día = 0
         
+        // Validar el nombre no contengan numeros
+
         print("Ingresa los datos de la persona fisica a registrar: ")
         repeat {            
             print("\tApellido paterno: ")
@@ -260,7 +262,7 @@ class PersonaFisica {
         let fechaFormateada = entradaYSalida.obtenFecha (año: año, mes: mes, día: día)
         let nombreCompletoFiltrado = filtraNombreCompleto (apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, nombres: nombres, año: año, mes: mes, día: día)
         let claveHomonimia = entradaYSalida.obtenerClaveHomonimia(entrada: nombreCompletoFiltrado, diccionarioTabla1: dicc.tablaValoresCaracteresNombre, diccionarioTabla2: dicc.tablaValoresCocienteYResiduo)
-        let digitoVerificador = ""
+        let digitoVerificador = entradaYSalida.obtenerDigitoVerificador (rfcConHomonimia: rfcConHomonimia, diccionario: dicc.tablaValoresGeneracionDigitoVerificador)
         
         return (claveSinAcentos, fechaFormateada, claveHomonimia, digitoVerificador)
     }

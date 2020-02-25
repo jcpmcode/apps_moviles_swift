@@ -183,7 +183,21 @@ class PersonaMoral {
     // Terminar esta funcion
     func convertirNumerosAPalabras (cadenaEnArray: [String]) -> String {
         var resultado = ""
+        var unidades = 0
+        var decenas = 0
+        var centenas = 0
+        var unidadesMillar = 0
+        var decenasMillar = 0
+        var centenasMillar = 0
+        var unidadesMillon = 0
+        var decenasMillon = 0
+        var centenasMillon = 0
         
+        for palabra in cadenaEnArray {
+
+        }
+
+
         resultado = cadenaEnArray.joined(separator: " ")
         
         return resultado
@@ -236,7 +250,9 @@ class PersonaMoral {
         let entradaLimpia = entradaysalida.quitarStringsVacios(cadena: razonSocial)
         let numerosRomanosAArabigos = personaMoral.convertirNumerosRomanosArabigos(cadenaEnArray: entradaLimpia, diccionarioNumerosRomanos: d.numerosRomanos)
         // pendiente
-        let numerosAPalabras = convertirNumerosAPalabras(cadenaEnArray: numerosRomanosAArabigos)     
+        // validar que los numeros en la razon social sean enteros
+        let numerosAPalabras = convertirNumerosAPalabras(cadenaEnArray: numerosRomanosAArabigos)
+        // modificar este para recibir un arreglo
         let cadenaPreparada = entradaysalida.preparaStringParaValidaciones(cadena: numerosAPalabras)
         let cadenaSinCaracteresNoPermitidos = entradaysalida.reemplazarElementosString(cadena: cadenaPreparada, listaDePalabrasAReemplazar: d.caracteresNoPermitidos, StringDeReemplazo: "")
         let cadenaSinPalabrasNoPermitidas = entradaysalida.reemplazarElementosString(cadena: cadenaSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: d.tablaPalabrasNoUtilizadasRFCMorales, StringDeReemplazo: " ")        
@@ -248,7 +264,7 @@ class PersonaMoral {
         let razonSocialCompleta = filtraRazonSocial(entrada: razonSocial)
         let claveHomonimia = entradaysalida.obtenerClaveHomonimia(entrada: razonSocialCompleta, diccionarioTabla1: d.tablaValoresCaracteresNombre, diccionarioTabla2: d.tablaValoresCocienteYResiduo)
         let rfcConHomonimia = claveSinAcentos + fechaFormateada + claveHomonimia
-        let digitoVerificador = ""
+        let digitoVerificador = entradaysalida.obtenerDigitoVerificador (rfcConHomonimia: rfcConHomonimia, diccionario: d.tablaValoresGeneracionDigitoVerificador)
         
         return (claveSinAcentos, fechaFormateada, claveHomonimia, digitoVerificador)
     }
