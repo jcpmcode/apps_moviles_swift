@@ -26,21 +26,21 @@ if (argc > 1) {
     info.imprimeUso()
 }
 else {
-    let str = "S. en C., S. En C hola como estas S. de R.L. sociedad xs S en C."
-//    let str = "s en c s en c s en c s en c s en c"
-    c = personaMoral.preparaStringParaValidaciones(RazonSocial: str)
-    a = personaMoral.quitarElementosString(cadena: c, listaDePalabrasAQuitar: d.caracteresNoPermitidos, StringDeReemplazo: "")
-    b = personaMoral.quitarElementosString(cadena: a, listaDePalabrasAQuitar: d.tablaPalabrasNoUtilizadasRFCMoralesSinPuntos, StringDeReemplazo: " ")
-    let razonSocial = b.components(separatedBy: " ")
-    print (razonSocial)
-    
-//    if (razonSocial[0] == "") {
-//        razonSocial.remove(at: 0)
-//    }
-    print (a)
-    print (b)
-//    info.imprimeDescripcion()
-//    menu.imprimeMenu()
-}
+    // info.imprimeDescripcion()
+    // menu.imprimeMenu()
 
-// Algoritmo para tomar digitos de la fecha:
+    // let str = "S. en C., S. En C hola como estas S. de R.L. sociedad xs S en C.    Paty   Chucho "
+    // let entradaLimpia = personaMoral.quitarStringsVacios(cadena: s)
+    // let numerosRomanosAArabigos = personaMoral.convertirNumerosRomanosArabigos(cadenaEnArray: s)
+    // let numerosAPalabras = personaMoral.convertirNumerosAPalabras(cadenaEnArray: s)     
+    // let cadenaPreparada = personaMoral.preparaStringParaValidaciones(cadena: s)
+    // let cadenaSinCaracteresNoPermitidos = personaMoral.reemplazarElementosString(cadena: s, listaDePalabrasAReemplazar: d.caracteresNoPermitidos, StringDeReemplazo: "")
+    // let cadenaSinPalabrasNoPermitidas = personaMoral.reemplazarElementosString(cadena: s, listaDePalabrasAReemplazar: d.tablaPalabrasNoUtilizadasRFCMorales, StringDeReemplazo: " ")
+    // let cadenaSinPuntosYComas = personaMoral.reemplazarElementosString(cadena: s, listaDePalabrasAReemplazar: d.puntosYComas, StringDeReemplazo: "")
+    // let cadenaFiltrada = personaMoral.quitarStringsVacios(cadena: s)
+    // let clave = personaMoral.obtenClavePersonaMoral(razonSocial: )
+    // let fechaFormateada = obtenFecha (año: año, mes: mes, día: día)
+    // let rfc = clave + fechaFormateada
+
+    
+}
