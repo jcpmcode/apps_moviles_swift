@@ -26,7 +26,7 @@ class EntradaYSalida {
 
         for palabraInconveniente in listaDePalabrasAReemplazar {
             // hay que iterar caracter por caracter para asegurar que elimina todas las palabras
-            for letra in resultado {
+            for _ in resultado {
                 resultado = resultado.replacingOccurrences(of: palabraInconveniente, with: StringDeReemplazo)
             }
         }

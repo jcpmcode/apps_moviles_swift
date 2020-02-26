@@ -21,6 +21,7 @@ class Info {
     func imprimeDescripcion() {
         print("Descripción:")
         print("\tHola, este es un programa que genera el RFC tanto para personas fisicas como para personas morales.")
+        print("")
     }
     
 }

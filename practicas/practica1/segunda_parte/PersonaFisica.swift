@@ -262,6 +262,7 @@ class PersonaFisica {
         let fechaFormateada = entradaYSalida.obtenFecha (año: año, mes: mes, día: día)
         let nombreCompletoFiltrado = filtraNombreCompleto (apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, nombres: nombres, año: año, mes: mes, día: día)
         let claveHomonimia = entradaYSalida.obtenerClaveHomonimia(entrada: nombreCompletoFiltrado, diccionarioTabla1: dicc.tablaValoresCaracteresNombre, diccionarioTabla2: dicc.tablaValoresCocienteYResiduo)
+        let rfcConHomonimia = claveSinAcentos + fechaFormateada + claveHomonimia
         let digitoVerificador = entradaYSalida.obtenerDigitoVerificador (rfcConHomonimia: rfcConHomonimia, diccionario: dicc.tablaValoresGeneracionDigitoVerificador)
         
         return (claveSinAcentos, fechaFormateada, claveHomonimia, digitoVerificador)

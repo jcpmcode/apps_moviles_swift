@@ -153,7 +153,8 @@ class PersonaMoral {
                 flag = 0
                 acumulador = 0
                 primeraLetra = String(Array(palabra)[0])
-                segundaLetra = String(Array(palabra)[1])        
+                segundaLetra = String(Array(palabra)[1])
+                // corregir este ciclo
                 for (numero, _) in diccionarioNumerosRomanos{
                     if primeraLetra == numero {                
                         for (n, _) in  diccionarioNumerosRomanos{
@@ -182,25 +183,26 @@ class PersonaMoral {
     
     // Terminar esta funcion
     func convertirNumerosAPalabras (cadenaEnArray: [String]) -> String {
-        var resultado = ""
-        var unidades = 0
-        var decenas = 0
-        var centenas = 0
-        var unidadesMillar = 0
-        var decenasMillar = 0
-        var centenasMillar = 0
-        var unidadesMillon = 0
-        var decenasMillon = 0
-        var centenasMillon = 0
+        var numeroEnLetras = ""
+        let formatter = NumberFormatter()
+        
+        formatter.numberStyle = .spellOut
+        formatter.locale = Locale(identifier: "es_MX")
         
         for palabra in cadenaEnArray {
-
+            // Si el string contiene solo numeros, entonces los convierte a palabras y concatena
+            if (CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: palabra))) {
+                numeroEnLetras += formatter.string(from: NSNumber(value: Int(palabra)!))!
+                numeroEnLetras += " "
+            }
+                // De lo contrario solo concatena la palabra
+            else {
+                numeroEnLetras += palabra
+                numeroEnLetras += " "
+            }
         }
-
-
-        resultado = cadenaEnArray.joined(separator: " ")
         
-        return resultado
+        return numeroEnLetras
     }
     
     // sirve para validar que la fecha sea menor o igual a la fecha actual
@@ -252,7 +254,6 @@ class PersonaMoral {
         // pendiente
         // validar que los numeros en la razon social sean enteros
         let numerosAPalabras = convertirNumerosAPalabras(cadenaEnArray: numerosRomanosAArabigos)
-        // modificar este para recibir un arreglo
         let cadenaPreparada = entradaysalida.preparaStringParaValidaciones(cadena: numerosAPalabras)
         let cadenaSinCaracteresNoPermitidos = entradaysalida.reemplazarElementosString(cadena: cadenaPreparada, listaDePalabrasAReemplazar: d.caracteresNoPermitidos, StringDeReemplazo: "")
         let cadenaSinPalabrasNoPermitidas = entradaysalida.reemplazarElementosString(cadena: cadenaSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: d.tablaPalabrasNoUtilizadasRFCMorales, StringDeReemplazo: " ")        

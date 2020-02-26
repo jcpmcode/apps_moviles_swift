@@ -48,7 +48,7 @@ class Menu {
             default:
                 print("ERROR: Por favor selecciona una opción válida")
             }
-        }
-            while (opcionSeleccionada != "c")
+            str = ""
+        } while (opcionSeleccionada != "c")
     }
 }
