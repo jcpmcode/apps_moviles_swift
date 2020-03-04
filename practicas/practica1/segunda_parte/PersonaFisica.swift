@@ -15,6 +15,7 @@ let dicc = Diccionarios()
 //  3 letras, 1 espacio y 6 digitos. 3 digitos adicionales para la homoclave (2 letras y 1 numero)
 class PersonaFisica {
     
+    // Esta función permite leer los datos de la persona fisica a la cual se le generará su rfc
     func leerDatosPersonaFisica() -> (String, String, String, Int, Int, Int) {
         var apellidoPaterno = ""
         var apellidoMaterno = ""
@@ -64,6 +65,8 @@ class PersonaFisica {
         return (apellidoPaterno, apellidoMaterno, nombres, año, mes, día)
     }
     
+    // Esta funcion obtiene la clave de la persona fisica que formará parte de su RFC
+    // Para esto utiliza el apellido paterno, materno y el nombre de la persona
     func obtenClavePersonaFisica (apellidoPaterno: [String], apellidoMaterno: [String], nombres: [String]) -> String{
         var iniciales = ""
         
@@ -86,7 +89,7 @@ class PersonaFisica {
                 }
                 else {
                     if ((apellidoPaterno.count == 0) && (apellidoMaterno.count > 0)) {                
-                        iniciales = inicialesSinApellidoPaterno (apellidoMaterno: apellidoPaterno, nombres: apellidoMaterno)
+                        iniciales = inicialesSinApellidoPaterno (apellidoMaterno: apellidoMaterno, nombres: nombres)
                     }
                 }
             }
@@ -98,6 +101,8 @@ class PersonaFisica {
         return iniciales
     }
     
+    // Esta función valida que la fecha de nacimiento ingresada sea valida
+    // Es decir que no pueda ser una fecha que no exista, futura, o que la persona no sea mayor a 18 años
     func validaFechaNacimientoPersonaFisica (año: Int, mes: Int, día: Int) -> Bool {
         let calendar = Calendar.current
         let formatter = DateFormatter()
@@ -132,6 +137,7 @@ class PersonaFisica {
         return true
     }
     
+    // Esta función obtiene las iniciales que conforman la clave para el caso de que no se tenga apellido materno
     func inicialesSinApellidoMaterno (apellidoPaterno: [String], nombres: [String]) -> String{
         var resultado = ""
         
@@ -141,6 +147,7 @@ class PersonaFisica {
         return resultado
     }
     
+    // Esta función obtiene las iniciales que conforman la clave para el caso de que no se tenga apellido paterno
     func inicialesSinApellidoPaterno (apellidoMaterno: [String], nombres: [String]) -> String{
         var resultado = ""
         
@@ -150,6 +157,7 @@ class PersonaFisica {
         return resultado
     }
     
+    // Esta función calcula la clave para el caso de que el apellido paterno sea muy corto
     func inicialesConApellidoPaternoPequeño(apellidoPaterno: [String], apellidoMaterno: [String], nombres: [String]) -> String {
         var resultado = ""
         
@@ -160,6 +168,7 @@ class PersonaFisica {
         return resultado
     }
     
+    // Esta función permite calcular la clave cuando se ingresan 2 apellidos y nombre
     func inicialesConNombreCompleto(apellidoPaterno: [String], apellidoMaterno: [String], nombres: [String]) -> String {
         var resultado = ""
         
@@ -177,6 +186,7 @@ class PersonaFisica {
         return resultado
     }
     
+    // Esta función permite obtener la primera vocal de una palabra
     func primeraVocal (apellidoPaterno: [String]) -> String {
         var resultado = ""
         var i = 0
@@ -194,6 +204,7 @@ class PersonaFisica {
         return resultado
     }
     
+    // Esta función sustituye el resultado del calculo de la clave para los casos en que esta resulte una palabra inconveniente
     func sustituirPalabraInconvenienteClave (clave: String, listaDePalabrasInconvenientes: [String: String]) -> String {
         var resultado = clave
         
@@ -207,50 +218,62 @@ class PersonaFisica {
         return resultado
     }
     
+    // Esta función permite obtener el nombre completo de la persona fisica para poder ser utilizado en el calculo de la clave diferenciadora
     func filtraNombreCompleto (apellidoPaterno: String, apellidoMaterno: String, nombres: String, año: Int, mes: Int, día: Int) -> String {
         var resultado = ""
-        let apellidoPaternoPreparado = entradaysalida.preparaStringParaValidaciones(cadena: apellidoPaterno)
+        let apellidoPaternoSinAcentos = entradaYSalida.quitarAcentos (cadena: apellidoPaterno, diccionarioAcentos: dicc.equivalenciasAcentos)
+        let apellidoPaternoPreparado = entradaysalida.preparaStringParaValidaciones(cadena: apellidoPaternoSinAcentos)
         let apellidoPaternoSinCaracteresNoPermitidos = entradaYSalida.reemplazarElementosString(cadena: apellidoPaternoPreparado, listaDePalabrasAReemplazar: dicc.caracteresNoPermitidos, StringDeReemplazo: "")
         let apellidoPaternoSinPuntosYComas = entradaYSalida.reemplazarElementosString(cadena: apellidoPaternoSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: dicc.puntosYComas, StringDeReemplazo: "")
         let apellidoPaternoFiltrado = entradaYSalida.quitarStringsVacios(cadena: apellidoPaternoSinPuntosYComas)
         
-        let apellidoMaternoPreparado = entradaysalida.preparaStringParaValidaciones(cadena: apellidoPaterno)
+        let apellidoMaternoSinAcentos = entradaYSalida.quitarAcentos (cadena: apellidoMaterno, diccionarioAcentos: dicc.equivalenciasAcentos)
+        let apellidoMaternoPreparado = entradaysalida.preparaStringParaValidaciones(cadena: apellidoMaternoSinAcentos)
         let apellidoMaternoSinCaracteresNoPermitidos = entradaYSalida.reemplazarElementosString(cadena: apellidoMaternoPreparado, listaDePalabrasAReemplazar: dicc.caracteresNoPermitidos, StringDeReemplazo: "")
         let apellidoMaternoSinPuntosYComas = entradaYSalida.reemplazarElementosString(cadena: apellidoMaternoSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: dicc.puntosYComas, StringDeReemplazo: "")
         let apellidoMaternoFiltrado = entradaYSalida.quitarStringsVacios(cadena: apellidoMaternoSinPuntosYComas)
         
-        let nombresPreparada = entradaysalida.preparaStringParaValidaciones(cadena: nombres)
+        let nombresSinAcentos = entradaYSalida.quitarAcentos (cadena: nombres, diccionarioAcentos: dicc.equivalenciasAcentos)
+        let nombresPreparada = entradaysalida.preparaStringParaValidaciones(cadena: nombresSinAcentos)
         let nombresSinCaracteresNoPermitidos = entradaYSalida.reemplazarElementosString(cadena: nombresPreparada, listaDePalabrasAReemplazar: dicc.caracteresNoPermitidos, StringDeReemplazo: "")
         let nombresSinPuntosYComas = entradaYSalida.reemplazarElementosString(cadena: nombresSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: dicc.puntosYComas, StringDeReemplazo: "")
         let nombresFiltrados = entradaYSalida.quitarStringsVacios(cadena: nombresSinPuntosYComas)
         
         for palabra in apellidoPaternoFiltrado {
             resultado += palabra
+            resultado += " "
         }
         for palabra in apellidoMaternoFiltrado {
             resultado += palabra
+            resultado += " "
         }
         for palabra in nombresFiltrados {
             resultado += palabra
+            resultado += " "
         }
         
         return resultado
     }
     
+    // Esta función utiliza varias de las funciones previamente definidas para poder calcular el RFC completo de la persona fisica
     func generaRFCPersonaFisica(apellidoPaterno: String, apellidoMaterno: String, nombres: String, año: Int, mes: Int, día: Int) -> (String, String, String, String) {
-        let apellidoPaternoPreparado = entradaysalida.preparaStringParaValidaciones(cadena: apellidoPaterno)
+        
+        let apellidoPaternoSinAcentos = entradaYSalida.quitarAcentos (cadena: apellidoPaterno, diccionarioAcentos: dicc.equivalenciasAcentos)
+        let apellidoPaternoPreparado = entradaysalida.preparaStringParaValidaciones(cadena: apellidoPaternoSinAcentos)
         let apellidoPaternoSinCaracteresNoPermitidos = entradaYSalida.reemplazarElementosString(cadena: apellidoPaternoPreparado, listaDePalabrasAReemplazar: dicc.caracteresNoPermitidos, StringDeReemplazo: "")
         let apellidoPaternoSinPalabrasNoPermitidas = entradaYSalida.reemplazarElementosString(cadena: apellidoPaternoSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: dicc.tablaPalabrasNoUtilizadasRFCFisicas, StringDeReemplazo: " ")
         let apellidoPaternoSinPuntosYComas = entradaYSalida.reemplazarElementosString(cadena: apellidoPaternoSinPalabrasNoPermitidas, listaDePalabrasAReemplazar: dicc.puntosYComas, StringDeReemplazo: "")
         let apellidoPaternoFiltrado = entradaYSalida.quitarStringsVacios(cadena: apellidoPaternoSinPuntosYComas)
         
-        let apellidoMaternoPreparado = entradaysalida.preparaStringParaValidaciones(cadena: apellidoPaterno)
+        let apellidoMaternoSinAcentos = entradaYSalida.quitarAcentos (cadena: apellidoMaterno, diccionarioAcentos: dicc.equivalenciasAcentos)
+        let apellidoMaternoPreparado = entradaysalida.preparaStringParaValidaciones(cadena: apellidoMaternoSinAcentos)
         let apellidoMaternoSinCaracteresNoPermitidos = entradaYSalida.reemplazarElementosString(cadena: apellidoMaternoPreparado, listaDePalabrasAReemplazar: dicc.caracteresNoPermitidos, StringDeReemplazo: "")
         let apellidoMaternoSinPalabrasNoPermitidas = entradaYSalida.reemplazarElementosString(cadena: apellidoMaternoSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: dicc.tablaPalabrasNoUtilizadasRFCFisicas, StringDeReemplazo: " ")
         let apellidoMaternoSinPuntosYComas = entradaYSalida.reemplazarElementosString(cadena: apellidoMaternoSinPalabrasNoPermitidas, listaDePalabrasAReemplazar: dicc.puntosYComas, StringDeReemplazo: "")
         let apellidoMaternoFiltrado = entradaYSalida.quitarStringsVacios(cadena: apellidoMaternoSinPuntosYComas)
         
-        let nombresPreparada = entradaysalida.preparaStringParaValidaciones(cadena: nombres)
+        let nombresSinAcentos = entradaYSalida.quitarAcentos (cadena: nombres, diccionarioAcentos: dicc.equivalenciasAcentos)
+        let nombresPreparada = entradaysalida.preparaStringParaValidaciones(cadena: nombresSinAcentos)
         let nombresSinCaracteresNoPermitidos = entradaYSalida.reemplazarElementosString(cadena: nombresPreparada, listaDePalabrasAReemplazar: dicc.caracteresNoPermitidos, StringDeReemplazo: "")
         let nombresSinPalabrasNoPermitidas = entradaYSalida.reemplazarElementosString(cadena: nombresSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: dicc.tablaPalabrasNoUtilizadasRFCFisicas, StringDeReemplazo: " ")
         let nombresSinPuntosYComas = entradaYSalida.reemplazarElementosString(cadena: nombresSinPalabrasNoPermitidas, listaDePalabrasAReemplazar: dicc.puntosYComas, StringDeReemplazo: "")
@@ -258,14 +281,13 @@ class PersonaFisica {
         
         let clave = obtenClavePersonaFisica (apellidoPaterno: apellidoPaternoFiltrado, apellidoMaterno: apellidoMaternoFiltrado, nombres: nombresFiltrados)
         let claveValidada = sustituirPalabraInconvenienteClave (clave: clave, listaDePalabrasInconvenientes: dicc.tablaPalabrasInconvenientes)
-        let claveSinAcentos = entradaYSalida.quitarAcentosClave (clave: claveValidada, diccionarioAcentos: dicc.equivalenciasAcentos)
         let fechaFormateada = entradaYSalida.obtenFecha (año: año, mes: mes, día: día)
         let nombreCompletoFiltrado = filtraNombreCompleto (apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, nombres: nombres, año: año, mes: mes, día: día)
         let claveHomonimia = entradaYSalida.obtenerClaveHomonimia(entrada: nombreCompletoFiltrado, diccionarioTabla1: dicc.tablaValoresCaracteresNombre, diccionarioTabla2: dicc.tablaValoresCocienteYResiduo)
-        let rfcConHomonimia = claveSinAcentos + fechaFormateada + claveHomonimia
+        let rfcConHomonimia = claveValidada + fechaFormateada + claveHomonimia
         let digitoVerificador = entradaYSalida.obtenerDigitoVerificador (rfcConHomonimia: rfcConHomonimia, diccionario: dicc.tablaValoresGeneracionDigitoVerificador)
         
-        return (claveSinAcentos, fechaFormateada, claveHomonimia, digitoVerificador)
+        return (claveValidada, fechaFormateada, claveHomonimia, digitoVerificador)
     }
     
 }

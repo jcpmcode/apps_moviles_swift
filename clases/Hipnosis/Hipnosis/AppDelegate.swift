@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Hipnosis
 //
-//  Created by jpaniagua on 2/20/20.
-//  Copyright © 2020 jpaniagua. All rights reserved.
+//  Created by molascoaga on 2/20/20.
+//  Copyright © 2020 molascoaga. All rights reserved.
 //
 
 import UIKit

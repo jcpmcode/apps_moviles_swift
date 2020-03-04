@@ -16,6 +16,9 @@ let personamoral = PersonaMoral()
 // MARK: - Menu principal
 class Menu {
     
+    // Esta función despliega el menu al usuario para operar el programa
+    // Realiza algunas validaciones de las entradas del usuario, manda a llamar a los metodos para calcular los RFC 
+    // y también despliega el resultado de los calculos
     func imprimeMenu() {
         var opcionSeleccionada: String = ""
         var str = ""
@@ -31,15 +34,17 @@ class Menu {
             case "a":
                 let (apellidoPaterno, apellidoMaterno, nombres, año, mes, día) = personafisica.leerDatosPersonaFisica()
                 let (clave, fecha, claveHomonimia, digitoVerificador) = personafisica.generaRFCPersonaFisica(apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, nombres: nombres, año: año, mes: mes, día: día)
-                
+                print()
+                print()
                 print ("RFC Asignado: " + clave + "-" + fecha + "-" + claveHomonimia + "-" + digitoVerificador)
                 print ("Presiona cualquier tecla para volver al menu principal...")
                 str = e.obtieneInput()
             case "b":
                 let (razonSocial, año, mes, día) = personamoral.leerDatosPersonaMoral()
                 let (clave, fecha, claveHomonimia, digitoVerificador) = personamoral.generaRFCPersonaMoral(razonSocial: razonSocial, año: año, mes: mes, día: día)
-                print(razonSocial)
-                //RFC Asignado: ABCD-123456-DE-7
+                print()
+                print()
+                print(razonSocial)                
                 print ("RFC Asignado: " + clave + "-" + fecha + "-" + claveHomonimia + "-" + digitoVerificador)
                 print ("Presiona cualquier tecla para volver al menu principal...")
                 str = e.obtieneInput()

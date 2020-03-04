@@ -28,17 +28,4 @@ if (argc > 1) {
 else {
     info.imprimeDescripcion()
     menu.imprimeMenu()
-    
-    // let str = "S. en C. S. En C.  S. En C.  S. En C.  S. En C. h hola como estas S. de R.L. sociedad xs S. en C.  LA  Paty el  Chucho "
-    // let entradaLimpia = personaMoral.quitarStringsVacios(cadena: s)
-    // let numerosRomanosAArabigos = personaMoral.convertirNumerosRomanosArabigos(cadenaEnArray: s)
-    // let numerosAPalabras = personaMoral.convertirNumerosAPalabras(cadenaEnArray: s)     
-    // let cadenaPreparada = personaMoral.preparaStringParaValidaciones(cadena: s)
-    // let cadenaSinCaracteresNoPermitidos = personaMoral.reemplazarElementosString(cadena: s, listaDePalabrasAReemplazar: d.caracteresNoPermitidos, StringDeReemplazo: "")
-    // let cadenaSinPalabrasNoPermitidas = personaMoral.reemplazarElementosString(cadena: s, listaDePalabrasAReemplazar: d.tablaPalabrasNoUtilizadasRFCMorales, StringDeReemplazo: " ")
-    // let cadenaSinPuntosYComas = personaMoral.reemplazarElementosString(cadena: s, listaDePalabrasAReemplazar: d.puntosYComas, StringDeReemplazo: "")
-    // let cadenaFiltrada = personaMoral.quitarStringsVacios(cadena: s)
-    // let clave = personaMoral.obtenClavePersonaMoral(razonSocial: )
-    // let fechaFormateada = obtenFecha (año: año, mes: mes, día: día)
-    // let rfc = clave + fechaFormateada
 }

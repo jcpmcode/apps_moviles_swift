@@ -35,7 +35,7 @@
 		CF279A7E23FE252500474C1F /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		CF30167923FF3E9E00681BE6 /* PersonaFisica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonaFisica.swift; sourceTree = "<group>"; };
 		CF30167B23FF3EA300681BE6 /* PersonaMoral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonaMoral.swift; sourceTree = "<group>"; };
-		CFE7B7B023FB667400048628 /* segunda_parte */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = segunda_parte; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFE7B7B023FB667400048628 /* segunda_parte */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; includeInIndex = 0; path = segunda_parte; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE7B7B323FB667400048628 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

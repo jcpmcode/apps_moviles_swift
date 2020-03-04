@@ -15,6 +15,7 @@ let diccionarios = Diccionarios()
 // 1 espacio, 3 letras y 6 digitos 3 digitos adicionales para la homoclave (2 letras y 1 numero)
 class PersonaMoral {
     
+    // Esta función permite leer los datos de la persona moral
     func leerDatosPersonaMoral() -> (String, Int, Int, Int){
         var razonSocial = ""
         var str = ""
@@ -49,6 +50,7 @@ class PersonaMoral {
         return (razonSocial, año, mes, día)
     }
     
+    // Esta función obtiene la clave de la persona moral dependiendo de los datos ingresados
     func obtenClavePersonaMoral (razonSocial: [String]) -> String{
         var iniciales = " "
         
@@ -61,6 +63,7 @@ class PersonaMoral {
                 if (razonSocial.count == 2) {
                     // Regla 6
                     iniciales = inicialesDosPalabras(cadenaEnArray: razonSocial)
+                    
                 }
                 else {
                     // Regla 7
@@ -115,6 +118,7 @@ class PersonaMoral {
         return resultado
     }
     
+    // 
     func inicialesUnaPalabraConMenosDeTresLetras (cadenaEnArray: [String], numeroDeLetras: Int) -> String {
         var resultado = ""
         var letrasRestantes = ""
@@ -131,14 +135,14 @@ class PersonaMoral {
         return resultado
     }
     
-    // Solo puede ser un numero romano si es una palabra de una letra mayuscula sola o una palabra con dos numeros romanos en mayuscula
+    // Esta función permite convertir los numeros romanos de una cadena en numeros arábigos
     func convertirNumerosRomanosArabigos (cadenaEnArray: [String], diccionarioNumerosRomanos: [String: Int]) -> [String] {
         var resultado = cadenaEnArray
         var primeraLetra = ""
-        var segundaLetra = ""
         var contadorDePalabras = 0
         var flag = 0
         var acumulador = 0
+        var contadorLetras = 0
         
         for palabra in cadenaEnArray {    
             if (palabra.count == 1) {
@@ -150,21 +154,21 @@ class PersonaMoral {
                 }
             }
             else {
-                flag = 0
-                acumulador = 0
-                primeraLetra = String(Array(palabra)[0])
-                segundaLetra = String(Array(palabra)[1])
-                // corregir este ciclo
-                for (numero, _) in diccionarioNumerosRomanos{
-                    if primeraLetra == numero {                
-                        for (n, _) in  diccionarioNumerosRomanos{
-                            if segundaLetra == n {                        
-                                // Entonces es un numero romano                        
-                                flag = 1                        
-                            }
-                        }            
-                    }                                    
+                contadorLetras = 0
+                for (numero, _) in diccionarioNumerosRomanos {
+                    for letra in palabra {
+                        if String(letra) == numero {                            
+                            contadorLetras += 1
+                        }
+                    }
                 }
+                
+                if contadorLetras == palabra.count {
+                    flag = 1
+                }
+                
+                acumulador = 0
+
                 if (flag == 1) {
                     for (numero, sustituto) in diccionarioNumerosRomanos {
                         for indicePalabra in 0..<palabra.count {
@@ -181,7 +185,7 @@ class PersonaMoral {
         return resultado
     }
     
-    // Terminar esta funcion
+    // Esta función  para convertir números arábigos en palabras
     func convertirNumerosAPalabras (cadenaEnArray: [String]) -> String {
         var numeroEnLetras = ""
         let formatter = NumberFormatter()
@@ -202,11 +206,10 @@ class PersonaMoral {
             }
         }
         
-        return numeroEnLetras
+        return numeroEnLetras.uppercased()
     }
     
-    // sirve para validar que la fecha sea menor o igual a la fecha actual
-    // checar si funciona sin el if formatter.date(from: fechaEnString) != nil {
+    // Esta función sirve para validar que la fecha sea menor o igual a la fecha actual
     func validaFechaPersonaMoral (año: Int, mes: Int, día: Int) -> Bool {
         let calendar = Calendar.current
         let formatter = DateFormatter()
@@ -231,43 +234,46 @@ class PersonaMoral {
         return true
     }
     
+    // Esta función permite obtener la razon social completa de la persona moral para poder ser utilizado en el calculo de la clave diferenciadora
     func filtraRazonSocial(entrada: String) -> String {
         var resultado = ""
-        let entradaLimpia = entradaysalida.quitarStringsVacios(cadena: entrada)
+        
+        let razonSocialSinAcentos = entradaysalida.quitarAcentos (cadena: entrada, diccionarioAcentos: d.equivalenciasAcentos)
+        let entradaLimpia = entradaysalida.quitarStringsVacios(cadena: razonSocialSinAcentos)
         let numerosRomanosAArabigos = personaMoral.convertirNumerosRomanosArabigos(cadenaEnArray: entradaLimpia, diccionarioNumerosRomanos: d.numerosRomanos)
-        // pendiente
         let numerosAPalabras = convertirNumerosAPalabras(cadenaEnArray: numerosRomanosAArabigos)
         let cadenaPreparada = entradaysalida.preparaStringParaValidaciones(cadena: numerosAPalabras)
         let cadenaSinCaracteresNoPermitidos = entradaysalida.reemplazarElementosString(cadena: cadenaPreparada, listaDePalabrasAReemplazar: d.caracteresNoPermitidos, StringDeReemplazo: "")
-        let cadenaSinPuntosYComas = entradaysalida.reemplazarElementosString(cadena: cadenaSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: d.puntosYComas, StringDeReemplazo: "")
+        let cadenaSinPuntosYComas = entradaysalida.reemplazarElementosString(cadena: cadenaSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: d.puntosYComas, StringDeReemplazo: " ")
         let cadenaFiltrada = entradaysalida.quitarStringsVacios(cadena: cadenaSinPuntosYComas)
         
         for palabra in cadenaFiltrada {
             resultado += palabra
+            resultado += " "
         }
         return resultado
     }
     
+    // Esta función utiliza varias de las funciones previamente definidas para poder calcular el RFC completo de la persona moral
     func generaRFCPersonaMoral(razonSocial: String, año: Int, mes: Int, día: Int) -> (String, String, String, String) {
-        let entradaLimpia = entradaysalida.quitarStringsVacios(cadena: razonSocial)
+        
+        let razonSocialSinAcentos = entradaysalida.quitarAcentos (cadena: razonSocial, diccionarioAcentos: d.equivalenciasAcentos)
+        let entradaLimpia = entradaysalida.quitarStringsVacios(cadena: razonSocialSinAcentos)
         let numerosRomanosAArabigos = personaMoral.convertirNumerosRomanosArabigos(cadenaEnArray: entradaLimpia, diccionarioNumerosRomanos: d.numerosRomanos)
-        // pendiente
-        // validar que los numeros en la razon social sean enteros
         let numerosAPalabras = convertirNumerosAPalabras(cadenaEnArray: numerosRomanosAArabigos)
         let cadenaPreparada = entradaysalida.preparaStringParaValidaciones(cadena: numerosAPalabras)
         let cadenaSinCaracteresNoPermitidos = entradaysalida.reemplazarElementosString(cadena: cadenaPreparada, listaDePalabrasAReemplazar: d.caracteresNoPermitidos, StringDeReemplazo: "")
         let cadenaSinPalabrasNoPermitidas = entradaysalida.reemplazarElementosString(cadena: cadenaSinCaracteresNoPermitidos, listaDePalabrasAReemplazar: d.tablaPalabrasNoUtilizadasRFCMorales, StringDeReemplazo: " ")        
-        let cadenaSinPuntosYComas = entradaysalida.reemplazarElementosString(cadena: cadenaSinPalabrasNoPermitidas, listaDePalabrasAReemplazar: d.puntosYComas, StringDeReemplazo: "")
+        let cadenaSinPuntosYComas = entradaysalida.reemplazarElementosString(cadena: cadenaSinPalabrasNoPermitidas, listaDePalabrasAReemplazar: d.puntosYComas, StringDeReemplazo: " ")
         let cadenaFiltrada = entradaysalida.quitarStringsVacios(cadena: cadenaSinPuntosYComas)
         let clave = obtenClavePersonaMoral(razonSocial: cadenaFiltrada)
-        let claveSinAcentos = entradaysalida.quitarAcentosClave (clave: clave, diccionarioAcentos: d.equivalenciasAcentos)
         let fechaFormateada = entradaysalida.obtenFecha (año: año, mes: mes, día: día)
         let razonSocialCompleta = filtraRazonSocial(entrada: razonSocial)
         let claveHomonimia = entradaysalida.obtenerClaveHomonimia(entrada: razonSocialCompleta, diccionarioTabla1: d.tablaValoresCaracteresNombre, diccionarioTabla2: d.tablaValoresCocienteYResiduo)
-        let rfcConHomonimia = claveSinAcentos + fechaFormateada + claveHomonimia
+        let rfcConHomonimia = clave + fechaFormateada + claveHomonimia
         let digitoVerificador = entradaysalida.obtenerDigitoVerificador (rfcConHomonimia: rfcConHomonimia, diccionario: d.tablaValoresGeneracionDigitoVerificador)
         
-        return (claveSinAcentos, fechaFormateada, claveHomonimia, digitoVerificador)
+        return (clave, fechaFormateada, claveHomonimia, digitoVerificador)
     }
     
 }

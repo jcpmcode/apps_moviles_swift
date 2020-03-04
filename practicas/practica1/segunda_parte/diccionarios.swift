@@ -1,4 +1,5 @@
 class Diccionarios {
+    
     // Tabla 1
     let tablaValoresCaracteresNombre = [
         " " : "00",
@@ -195,7 +196,7 @@ class Diccionarios {
         " LAS ",
         " Y ",
         " DEL ",
-        " COMPAÑÍA ",
+        " COMPAÑIA ",
         " EN ",
         " PARA ",
         " CON ",
@@ -267,7 +268,7 @@ class Diccionarios {
     
     // Tabla 6
     let tablaPalabrasNoUtilizadasRFCFisicas = [
-        " D ",
+        " DE ",
         " DEL ",
         " LA ",
         " LOS ",

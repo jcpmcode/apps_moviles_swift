@@ -11,17 +11,28 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hipnosis" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="redraw" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trG-X6-VWw" customClass="HipnosisView" customModule="Hipnosis" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Sv1-Yd-0rA" customClass="HipnosisView" customModule="Hipnosis" customModuleProvider="target">
+                                <rect key="frame" x="20" y="44" width="366" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RUK-gt-3Rd" customClass="HipnosisView" customModule="Hipnosis" customModuleProvider="target">
+                                <rect key="frame" x="439" y="811" width="191" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sv1-Yd-0rA" secondAttribute="trailing" constant="28" id="Cm0-yb-lYh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sv1-Yd-0rA" secondAttribute="bottom" id="UNd-iO-q3T"/>
+                            <constraint firstItem="Sv1-Yd-0rA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kpv-XW-4zZ"/>
+                            <constraint firstItem="Sv1-Yd-0rA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m1p-jj-urw"/>
+                            <constraint firstItem="Sv1-Yd-0rA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yb7-an-7l4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
